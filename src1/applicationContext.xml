@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!--  
+    <context:component-scan base-package="com.spring.core"></context:component-scan>
+    <context:property-placeholder location="classpath:data.properties"/>
+           
+    
+  
+    
+ 
+       <bean id="person" class="com.spring.core.PersonService"></bean>
+
+	   <bean id= "account" class="com.spring.core.AccountServiceImpl" ></bean>
+	     -->
+	   
+	   
+
+		<bean id="account" class="com.spring.core.AccountServiceImpl">
+		<constructor-arg  ref="person"></constructor-arg>
+		</bean>
+		
+			<bean id="person" class="com.spring.core.PersonService"></bean>
+
+
+<!--  dependency setter  
+  <bean id="conntroller" class="com.spring.core.Conntroller">
+  
+  <property name="applicationService" ref="account"></property>
+  </bean>
+
+<bean id= "account" class="com.spring.core.AccountService" ></bean>
+-->
+
+
+<!-- 
+		<context:property-placeholder location="classpath:data.properties"/>
+ 		
+ 		<bean id="bank" class="com.spring.core.BankService" init-method="openConnection" destroy-method="closeConnection">
+ 		
+ 		<property name="name" value="${app_service-name}"></property>
+ 		</bean>
+ -->
+
+    
+</beans>
+
+
+
+
+
